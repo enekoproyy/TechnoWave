@@ -37,21 +37,21 @@ def init_db():
                 izena='MacBook Pro 14"',
                 deskribapena='Portátil profesional con chip M3 Pro, 16GB RAM, 512GB SSD',
                 prezioa=2499.99,
-                irudi_urla='static/img/macbook.jpg',
+                irudi_urla='/static/img/macbook.jpg',
                 kategoria_id=1
             ),
             Produktuak(
                 izena='Dell XPS 13',
                 deskribapena='Ultrabook compacto con Intel i7, 16GB RAM, 512GB SSD',
                 prezioa=1399.99,
-                irudi_urla='static/img/dellxps13.jpg',
+                irudi_urla='/static/img/dellxps13.jfif',
                 kategoria_id=1
             ),
             Produktuak(
                 izena='HP Pavilion Gaming',
                 deskribapena='Portátil gaming con RTX 4060, 16GB RAM, 1TB SSD',
                 prezioa=1199.99,
-                irudi_urla='static/img/hppavilon.jfif',
+                irudi_urla='/static/img/hppavilongaming.jfif',
                 kategoria_id=1
             ),
             
@@ -60,21 +60,21 @@ def init_db():
                 izena='iPhone 15 Pro',
                 deskribapena='Smartphone con chip A17 Pro, 256GB, cámara 48MP',
                 prezioa=1199.99,
-                irudi_urla='static/img/iphone15.jpg',
+                irudi_urla='/static/img/iphone15.jpg',
                 kategoria_id=2
             ),
             Produktuak(
                 izena='Samsung Galaxy S24',
                 deskribapena='Smartphone Android con Snapdragon 8 Gen 3, 256GB',
                 prezioa=999.99,
-                irudi_urla='static/img/samsunggalaxys24.jpg',
+                irudi_urla='/static/img/samsunggalaxys244.jpg',
                 kategoria_id=2
             ),
             Produktuak(
                 izena='Google Pixel 8',
                 deskribapena='Smartphone con Google Tensor G3, 128GB, Android puro',
                 prezioa=699.99,
-                irudi_urla='https://source.unsplash.com/featured/600x400?google,pixel,phone',
+                irudi_urla='/static/img/googlepixel8.jpeg',
                 kategoria_id=2
             ),
             
@@ -83,14 +83,14 @@ def init_db():
                 izena='iPad Air',
                 deskribapena='Tablet con chip M2, 128GB, pantalla Liquid Retina 11"',
                 prezioa=699.99,
-                irudi_urla='https://source.unsplash.com/featured/600x400?ipad,tablet',
+                irudi_urla='/static/img/ipadair.jfif',
                 kategoria_id=3
             ),
             Produktuak(
                 izena='Samsung Galaxy Tab S9',
                 deskribapena='Tablet Android premium con S Pen, 256GB, 11"',
                 prezioa=599.99,
-                irudi_urla='https://source.unsplash.com/featured/600x400?tablet,android',
+                irudi_urla='/static/img/galaxytabs9.jfif',
                 kategoria_id=3
             ),
             
@@ -99,28 +99,28 @@ def init_db():
                 izena='AirPods Pro 2',
                 deskribapena='Auriculares inalámbricos con cancelación de ruido activa',
                 prezioa=279.99,
-                irudi_urla='https://source.unsplash.com/featured/600x400?earbuds,headphones',
+                irudi_urla='/static/img/airpodspro2.jpg',
                 kategoria_id=4
             ),
             Produktuak(
                 izena='Logitech MX Master 3S',
                 deskribapena='Ratón inalámbrico ergonómico profesional',
                 prezioa=109.99,
-                irudi_urla='https://source.unsplash.com/featured/600x400?mouse,peripheral',
+                irudi_urla='/static/img/logitechmxmasters3.jpg',
                 kategoria_id=4
             ),
             Produktuak(
                 izena='Apple Magic Keyboard',
                 deskribapena='Teclado inalámbrico compacto con batería recargable',
                 prezioa=129.99,
-                irudi_urla='https://source.unsplash.com/featured/600x400?keyboard,apple',
+                irudi_urla='/static/img/applemagickeyboard.jfif',
                 kategoria_id=4
             ),
             Produktuak(
                 izena='SanDisk Extreme Pro 1TB',
                 deskribapena='SSD externo portátil, velocidad hasta 2000MB/s',
                 prezioa=159.99,
-                irudi_urla='https://source.unsplash.com/featured/600x400?ssd,external,drive',
+                irudi_urla='/static/img/sandiskextremepro1tb.jpg',
                 kategoria_id=4
             ),
         ]
