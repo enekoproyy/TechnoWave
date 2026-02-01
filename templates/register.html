@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Erregistratu - TechnoWave{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="form-container">
+        <h2>Erregistratu / Registro</h2>
+        
+        <form method="POST" action="{{ url_for('auth.register') }}">
+            <div class="form-group">
+                <label for="izena">Izena / Nombre:*</label>
+                <input type="text" id="izena" name="izena" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="abizenak">Abizenak / Apellidos:*</label>
+                <input type="text" id="abizenak" name="abizenak" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="helbide_elektronikoa">Email:*</label>
+                <input type="email" id="helbide_elektronikoa" name="helbide_elektronikoa" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="tfnoa">Telefonoa / Teléfono:</label>
+                <input type="tel" id="tfnoa" name="tfnoa">
+            </div>
+            
+            <div class="form-group">
+                <label for="pasahitza">Pasahitza / Contraseña:* (min. 6 karaktere)</label>
+                <input type="password" id="pasahitza" name="pasahitza" required minlength="6">
+            </div>
+            
+            <div class="form-group">
+                <label for="pasahitza_confirm">Berretsi pasahitza / Confirmar contraseña:*</label>
+                <input type="password" id="pasahitza_confirm" name="pasahitza_confirm" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Erregistratu / Registrarse</button>
+        </form>
+        
+        <p class="form-footer">
+            Dagoeneko kontu bat duzu? / ¿Ya tienes cuenta? 
+            <a href="{{ url_for('auth.login') }}">Hasi saioa / Login</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

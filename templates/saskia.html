@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Saskia - TechnoWave{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Nire saskia / Mi carrito</h2>
+    
+    <div id="saskia-edukia">
+        <div class="loading">Kargatzen... / Cargando...</div>
+    </div>
+    
+    <div id="saskia-totala" class="saskia-totala" style="display:none;">
+        <h3>Totala / Total: <span id="total-prezioa">0.00</span> €</h3>
+        <button id="btn-erosi" class="btn btn-success btn-lg">Erosi / Comprar</button>
+        <button id="btn-hustu" class="btn btn-danger">Saskia hustu / Vaciar carrito</button>
+    </div>
+    
+    <div id="saskia-hutsik" style="display:none;">
+        <p class="empty-message">Zure saskia hutsik dago / Tu carrito está vacío</p>
+        <a href="{{ url_for('produktuak.index') }}" class="btn btn-primary">Erosten hasi / Empezar a comprar</a>
+    </div>
+</div>
+{% endblock %}

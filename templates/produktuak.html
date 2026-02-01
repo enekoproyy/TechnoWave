@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Produktuak - TechnoWave{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Produktuen katalogoa / Catálogo de productos</h2>
+    
+    <!-- Filtro por categorías -->
+    <div class="kategoria-filtroak">
+        <a href="{{ url_for('produktuak.index') }}" 
+           class="btn-kategoria {% if not selected_kategoria %}active{% endif %}">
+            Guztiak / Todos
+        </a>
+        {% for kategoria in kategoriak %}
+            <a href="{{ url_for('produktuak.index', kategoria_id=kategoria.kategoria_id) }}" 
+               class="btn-kategoria {% if selected_kategoria == kategoria.kategoria_id %}active{% endif %}">
+                {{ kategoria.izena }}
+            </a>
+        {% endfor %}
+    </div>
+    
+    <!-- Productos -->
+    <div class="produktu-grid">
+        {% for produktua in produktuak %}
+            <div class="produktu-card">
+                {% if produktua.irudi_urla %}
+                    <img src="{{ produktua.irudi_urla }}" alt="{{ produktua.izena }}" class="produktu-irudia">
+                {% else %}
+                    <div class="produktu-irudia-placeholder">📱</div>
+                {% endif %}
+                
+                <div class="produktu-info">
+                    <h3>{{ produktua.izena }}</h3>
+                    <p class="deskribapena">{{ produktua.deskribapena|truncate(100) }}</p>
+                    <p class="prezioa">{{ "%.2f"|format(produktua.prezioa) }} €</p>
+                    
+                    {% if session.erabiltzaile_id %}
+                        <button class="btn btn-primary btn-gehitu-saskira" 
+                                data-produktu-id="{{ produktua.produktu_id }}"
+                                data-produktu-izena="{{ produktua.izena }}">
+                            Saskira gehitu / Añadir al carrito
+                        </button>
+                    {% else %}
+                        <a href="{{ url_for('auth.login') }}" class="btn btn-secondary">
+                            Hasi saioa erosten hasteko / Login para comprar
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        {% else %}
+            <p class="no-produktuak">Ez dago produkturik kategoria honetan / No hay productos en esta categoría</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/produktuak.js') }}"></script>
+{% endblock %}

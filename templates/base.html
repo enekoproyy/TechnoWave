@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}TechnoWave{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="{{ url_for('index') }}" class="logo">TechnoWave</a>
+            
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('index') }}">Hasiera / Inicio</a></li>
+                <li><a href="{{ url_for('produktuak.index') }}">Produktuak / Productos</a></li>
+                
+                {% if session.erabiltzaile_id %}
+                    <li><a href="{{ url_for('saskia_view') }}">
+                        Saskia / Carrito <span id="saski-kantitatea" class="badge">0</span>
+                    </a></li>
+                    <li><a href="{{ url_for('eskaerak.view_eskaerak') }}">Eskaerak / Pedidos</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">{{ session.izena }}</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for('auth.logout') }}">Irten / Salir</a></li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <li><a href="{{ url_for('auth.login') }}">Hasi saioa / Login</a></li>
+                    <li><a href="{{ url_for('auth.register') }}">Erregistratu / Registro</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mensajes flash -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="container">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                        <button class="close-alert">&times;</button>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 TechnoWave. Eskubide guztiak erreserbatuak / Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% if session.erabiltzaile_id %}
+        <script src="{{ url_for('static', filename='js/saskia.js') }}"></script>
+    {% endif %}
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Hasiera - TechnoWave{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <div class="container">
+        <h1>Ongi etorri TechnoWave-ra</h1>
+        <h2>Bienvenido a TechnoWave</h2>
+        <p>Zure teknologia denda online / Tu tienda online de tecnología</p>
+        <a href="{{ url_for('produktuak.index') }}" class="btn btn-primary">Ikusi produktuak / Ver productos</a>
+    </div>
+</div>
+
+<div class="container">
+    <section class="features">
+        <div class="feature-card">
+            <h3>📱 Teknologia produktuak</h3>
+            <p>Produktuen katalogo zabala / Amplio catálogo de productos</p>
+        </div>
+        <div class="feature-card">
+            <h3>🛒 Erosketa erraza</h3>
+            <p>Saskia eta eskaerak kudeatu / Gestiona tu carrito y pedidos</p>
+        </div>
+        <div class="feature-card">
+            <h3>🔒 Segurua</h3>
+            <p>Autentifikazio segurua / Autenticación segura</p>
+        </div>
+    </section>
+</div>
+{% endblock %}

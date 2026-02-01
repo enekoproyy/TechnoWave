@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Login - TechnoWave{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="form-container">
+        <h2>Hasi saioa / Iniciar sesión</h2>
+        
+        <form method="POST" action="{{ url_for('auth.login') }}">
+            <div class="form-group">
+                <label for="helbide_elektronikoa">Email:</label>
+                <input type="email" id="helbide_elektronikoa" name="helbide_elektronikoa" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="pasahitza">Pasahitza / Contraseña:</label>
+                <input type="password" id="pasahitza" name="pasahitza" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Hasi saioa / Login</button>
+        </form>
+        
+        <p class="form-footer">
+            Ez duzu konturik? / ¿No tienes cuenta? 
+            <a href="{{ url_for('auth.register') }}">Erregistratu / Regístrate</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

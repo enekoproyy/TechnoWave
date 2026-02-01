@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Eskaerak - TechnoWave{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Nire eskaerak / Mis pedidos</h2>
+    
+    <div id="eskaerak-zerrenda">
+        <div class="loading">Kargatzen... / Cargando...</div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/eskaerak.js') }}"></script>
+{% endblock %}
